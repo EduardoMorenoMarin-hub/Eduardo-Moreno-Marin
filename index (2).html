@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eduardo Moreno Marín — Technisches Profil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EFEBDD;
+    --paper-2: #E6E0CC;
+    --ink: #23231F;
+    --ink-soft: #52514A;
+    --copper: #A9633A;
+    --copper-dark: #7E4526;
+    --sage: #3E5C4F;
+    --grid-line: #C7BFA4;
+    --card: #F7F4E9;
+    --stamp-red: #9A3324;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0/100% 42px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0/42px 100%,
+      var(--paper);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .grid-overlay{
+    position: fixed; inset:0; pointer-events:none;
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0/100% 42px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0/42px 100%;
+    opacity:0.35;
+    z-index:0;
+  }
+
+  .wrap{ position:relative; z-index:1; max-width: 920px; margin:0 auto; padding: 0 28px 80px; }
+
+  header.ticket{
+    margin-top:40px;
+    border: 2px solid var(--ink);
+    background: var(--card);
+    box-shadow: 6px 6px 0 var(--copper);
+    padding: 28px 32px 24px;
+    position: relative;
+  }
+  .ticket-meta{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; letter-spacing:0.06em; text-transform:uppercase;
+    color: var(--ink-soft);
+    border-bottom: 1px dashed var(--grid-line);
+    padding-bottom:14px; margin-bottom:20px;
+    flex-wrap:wrap; gap:8px;
+  }
+  .stamp{
+    border:2px solid var(--stamp-red);
+    color: var(--stamp-red);
+    padding:4px 10px;
+    transform: rotate(-4deg);
+    font-weight:600;
+    letter-spacing:0.08em;
+    border-radius:3px;
+  }
+  h1.name{
+    font-family:'Space Grotesk', sans-serif;
+    font-size: clamp(32px, 6vw, 52px);
+    font-weight:700;
+    margin:0 0 6px;
+    line-height:1.05;
+    letter-spacing:-0.01em;
+  }
+  .role-line{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:15px;
+    color: var(--copper-dark);
+    margin:0 0 18px;
+    font-weight:500;
+  }
+  .contact-row{
+    display:flex; flex-wrap:wrap; gap:18px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color: var(--ink-soft);
+  }
+  .contact-row b{ color:var(--ink); font-weight:600; }
+
+  .section{ margin-top:56px; }
+  .section-label{ display:flex; align-items:center; gap:14px; margin-bottom:22px; }
+  .section-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; letter-spacing:0.1em;
+    color: var(--paper);
+    background: var(--sage);
+    padding:4px 10px;
+    white-space:nowrap;
+  }
+  .section-label h2{ font-family:'Space Grotesk', sans-serif; font-size:24px; margin:0; font-weight:600; }
+  .section-line{ flex:1; height:1px; background: var(--grid-line); }
+
+  .summary{
+    font-size:17px; line-height:1.65; color: var(--ink);
+    max-width: 700px;
+    border-left: 3px solid var(--copper);
+    padding-left:20px;
+  }
+
+  .skill-groups{ display:grid; gap:28px; }
+  .skill-group h3{
+    font-family:'IBM Plex Mono', monospace; font-size:13px;
+    text-transform:uppercase; letter-spacing:0.08em;
+    color: var(--sage); margin:0 0 12px; font-weight:600;
+  }
+  .tag-row{ display:flex; flex-wrap:wrap; gap:10px; }
+  .tag{
+    font-family:'IBM Plex Mono', monospace; font-size:13px;
+    background: var(--card); border:1.5px solid var(--ink);
+    padding:6px 12px 6px 10px;
+    display:flex; align-items:center; gap:8px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .tag::before{ content:""; width:7px; height:7px; border-radius:50%; background: var(--copper); flex-shrink:0; }
+  .tag:hover{ transform: translateY(-2px); box-shadow: 3px 3px 0 var(--copper); }
+
+  .timeline{ position:relative; padding-left:28px; }
+  .timeline::before{
+    content:""; position:absolute; left:6px; top:6px; bottom:6px; width:2px;
+    background: repeating-linear-gradient(var(--ink) 0 6px, transparent 6px 11px);
+  }
+  .t-item{ position:relative; padding-bottom:32px; }
+  .t-item:last-child{ padding-bottom:0; }
+  .t-item::before{
+    content:""; position:absolute; left:-28px; top:4px;
+    width:13px; height:13px; background: var(--paper);
+    border:2px solid var(--copper); transform: rotate(45deg);
+  }
+  .t-item.basel::before{ background: var(--copper); }
+  .t-date{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--copper-dark); letter-spacing:0.05em; margin-bottom:4px; }
+  .t-role{ font-family:'Space Grotesk', sans-serif; font-size:18px; font-weight:600; margin:0 0 4px; }
+  .t-place{ font-size:14px; color:var(--ink-soft); margin-bottom:8px; font-style:italic; }
+  .t-desc{ font-size:15px; line-height:1.55; max-width:640px; }
+  .t-badge{
+    display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:10px;
+    letter-spacing:0.08em; text-transform:uppercase;
+    background: var(--sage); color: var(--paper);
+    padding:2px 7px; margin-left:8px; vertical-align:middle;
+  }
+
+  .edu-card{
+    background: var(--card); border:1.5px solid var(--ink);
+    padding:20px 24px; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .edu-title{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:17px; margin:0 0 4px;}
+  .edu-sub{ color:var(--ink-soft); font-size:14px; }
+  .edu-years{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--sage); white-space:nowrap; }
+
+  .lang-list{ display:flex; flex-direction:column; gap:14px; max-width:420px; }
+  .lang-row{ display:flex; align-items:center; gap:14px; }
+  .lang-name{ font-family:'IBM Plex Mono', monospace; font-size:13px; width:90px; flex-shrink:0; }
+  .lang-bar{ flex:1; height:8px; background:var(--paper-2); border:1px solid var(--ink); position:relative; }
+  .lang-fill{ height:100%; background:var(--sage); }
+
+  footer{
+    margin-top:70px; border-top: 2px solid var(--ink); padding-top:24px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--ink-soft);
+  }
+  footer a{ color:var(--copper-dark); text-decoration:none; border-bottom:1px solid var(--copper-dark); }
+
+  @media (max-width:600px){
+    .ticket-meta{ font-size:10px; }
+    header.ticket{ padding:22px 18px 20px; box-shadow: 4px 4px 0 var(--copper); }
+    .contact-row{ font-size:12px; gap:12px; }
+  }
+  @media (prefers-reduced-motion: reduce){ .tag{ transition:none; } }
+</style>
+</head>
+<body>
+<div class="grid-overlay"></div>
+<div class="wrap">
+
+  <header class="ticket">
+    <div class="ticket-meta">
+      <span>Profil-Auftrag Nr. EM-2026-07</span>
+      <span class="stamp">Verfügbar</span>
+    </div>
+    <h1 class="name">Eduardo Moreno Marín</h1>
+    <p class="role-line">Technischer Spezialist &amp; Handwerker — mit Ausbildung als Physikingenieur</p>
+    <div class="contact-row">
+      <span><b>Standort:</b> Basel-Stadt, Schweiz</span>
+      <span><b>Tel:</b> +41 78 338 99 73</span>
+      <span><b>E-Mail:</b> Eduardomarin268@gmail.com</span>
+    </div>
+    <div class="contact-row" style="margin-top:10px;">
+      <span><b>Aufenthaltsbewilligung:</b> B</span>
+      <span><b>Führerausweis:</b> Kat. B</span>
+      <span><b>Zivilstand:</b> Verheiratet</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-label">
+      <span class="section-tag">01 — PROFIL</span>
+      <h2>Zusammenfassung</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="summary">
+      Vielseitiger Fachmann, der eine formale Ausbildung als Physikingenieur mit jahrelanger praktischer Erfahrung
+      im Bau, in der Diagnose und Reparatur realer physikalischer Systeme verbindet: Holzkonstruktionen, Elektronik,
+      Gewächshausinfrastruktur und Klimasteuerung. Genauso sicher im mathematischen Denken wie im praktischen
+      Anpacken mit dem richtigen Werkzeug. Sucht eine Position in der Region Basel, in der diese doppelte
+      Kompetenz — technisch und handwerklich — gefragt ist.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-label">
+      <span class="section-tag">02 — KOMPETENZEN</span>
+      <h2>Fähigkeiten</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h3>Technisches Handwerk</h3>
+        <div class="tag-row">
+          <span class="tag">Präzisionsschreinerei</span>
+          <span class="tag">Elektronik &amp; Hardware-Diagnose</span>
+          <span class="tag">Gewächshaus- &amp; Klimasteuerungssysteme</span>
+          <span class="tag">Metallbearbeitung / Leichtschweissen</span>
+          <span class="tag">Maschinen- &amp; Elektrowerkzeuge</span>
+          <span class="tag">Grundlagen CNC-Programmierung</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Ingenieurwesen &amp; Analytik</h3>
+        <div class="tag-row">
+          <span class="tag">Mathematische Modellierung</span>
+          <span class="tag">Python / MATLAB</span>
+          <span class="tag">Power BI / Excel (fortgeschritten)</span>
+          <span class="tag">Technische Dokumentation (LaTeX)</span>
+          <span class="tag">Steuerung von Quantensystemen (Thesisprojekt)</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Betrieb &amp; Koordination</h3>
+        <div class="tag-row">
+          <span class="tag">Qualitäts- &amp; Bestandskontrolle</span>
+          <span class="tag">Teamkoordination</span>
+          <span class="tag">Arbeiten unter Zeitdruck</span>
+          <span class="tag">Strukturierte Problemlösung</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">
+      <span class="section-tag">03 — WERDEGANG</span>
+      <h2>Berufserfahrung</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline">
+      <div class="t-item basel">
+        <div class="t-date">Feb. 2026 — Jul. 2026</div>
+        <div class="t-role">Allrounder Küche &amp; Logistik <span class="t-badge">Basel</span></div>
+        <div class="t-place">La Cucaracha, Basel, Schweiz</div>
+        <div class="t-desc">Organisation der Lagerrotation, Qualitätskontrolle von Rohstoffen und Einhaltung der
+          Schweizer Hygienestandards in einem schnelllebigen Umfeld.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">2018 — Heute</div>
+        <div class="t-role">Selbstständiger technischer Handwerker</div>
+        <div class="t-place">Elektronik &amp; Gewächshausinfrastruktur · Mexiko / Schweiz</div>
+        <div class="t-desc">Konstruktion massgeschneiderter Holz- und Metallstrukturen für Gewächshausrahmen und
+          Hochbeete; Installation elektronischer Steuerungssysteme für Bewässerung und Klimasensoren.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">Jul. 2024 — Dez. 2024</div>
+        <div class="t-role">Mitarbeiter für Bio-Beschaffung</div>
+        <div class="t-place">Monte Uzulu Hotel, San Agustinillo, Oaxaca, Mexiko</div>
+        <div class="t-desc">Mitarbeit in einem nachhaltigen Hotelbetrieb mit Fokus auf Permakultur, Betrieb und
+          Instandhaltung künstlicher Feuchtgebiete, Abfallreduzierung und Ressourcenmanagement.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">Aug. 2023 — Jun. 2024</div>
+        <div class="t-role">Betriebskoordinator &amp; Küchenchef</div>
+        <div class="t-place">Maquil Restaurant, Hotel Casa Sol, Zipolite, Oaxaca, Mexiko</div>
+        <div class="t-desc">Teamkoordination und Ressourcenallokation unter anspruchsvollen Bedingungen; Anwendung
+          ingenieurtechnischer Logik zur Prozess- und Temperaturoptimierung.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">März 2023 — Jul. 2023</div>
+        <div class="t-role">Assistent für Beschaffung &amp; Service</div>
+        <div class="t-place">Budamar Hotel, Zipolite, Oaxaca, Mexiko</div>
+        <div class="t-desc">Überwachung der Frische von Rohzutaten und tägliches Bestandsmanagement für den
+          Grossbetrieb.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">Nov. 2022 — Feb. 2023</div>
+        <div class="t-role">Produktionsassistent</div>
+        <div class="t-place">Chiwui's Restaurant, Mazunte, Oaxaca, Mexiko</div>
+        <div class="t-desc">Entwicklung eines Abfallrecyclingsystems auf Basis von Wurmkompostierung (kalifornische
+          Rutenregenwürmer).</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">2020</div>
+        <div class="t-role">Thesisprojekt — Optimale Quantenkontrolle</div>
+        <div class="t-place">UAM Azcapotzalco, Mexiko</div>
+        <div class="t-desc">Modellierung (MATLAB) eines iterativen optimalen Kontrollalgorithmus für den
+          Zustandstransfer in einem Zwei-Niveau-Quantensystem.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">
+      <span class="section-tag">04 — AUSBILDUNG</span>
+      <h2>Ausbildung</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="edu-card">
+      <div>
+        <div class="edu-title">B.Sc. in Physikingenieurwesen</div>
+        <div class="edu-sub">UAM Azcapotzalco, Mexiko · Diplomanerkennung in Bearbeitung (SEFRI, Schweiz)</div>
+      </div>
+      <div class="edu-years">2015 – 2024</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">
+      <span class="section-tag">05 — SPRACHEN</span>
+      <h2>Sprachen</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="lang-list">
+      <div class="lang-row">
+        <span class="lang-name">Spanisch</span>
+        <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+      </div>
+      <div class="lang-row">
+        <span class="lang-name">Englisch</span>
+        <div class="lang-bar"><div class="lang-fill" style="width:85%"></div></div>
+      </div>
+      <div class="lang-row">
+        <span class="lang-name">Deutsch</span>
+        <div class="lang-bar"><div class="lang-fill" style="width:35%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Letzte Aktualisierung: Juli 2026</span>
+    <a href="mailto:Eduardomarin268@gmail.com">Eduardomarin268@gmail.com</a>
+  </footer>
+
+</div>
+</body>
+</html>
